@@ -14,8 +14,6 @@
     <maven.compiler.release>14</maven.compiler.release>
     <junit.version>5.6.2</junit.version>
     <javafx.version>14.0.1</javafx.version>
-    <controlsfx.version>11.0.1</controlsfx.version>
-    <scenicview.version>11.0.2</scenicview.version>
   </properties>
   <build>
     <plugins>
@@ -26,8 +24,6 @@
         <configuration>
           <mainClass>jfx_experiments.Multiple_Borders_In_Jfx</mainClass>
           <release>${maven.compiler.release}</release>
-          <!-- Set to Java 14 executable, if your JAVA_HOME does not point to one... -->
-          <!-- <executable>C:\Users\okr\scoop\apps\adoptopenjdk-openj9\current\bin\java</executable> -->
           <target>${maven.compiler.release}</target>
         </configuration>
       </plugin>
@@ -41,70 +37,7 @@
           <target>${maven.compiler.release}</target>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-toolchains-plugin</artifactId>
-        <version>3.0.0</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>toolchain</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <toolchains>
-            <jdk>
-              <version>${maven.compiler.release}</version>
-              <vendor>adoptopenjdk</vendor>
-            </jdk>
-          </toolchains>
-        </configuration>
-      </plugin>
     </plugins>
-    <pluginManagement>
-      <plugins>
-        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build 
-          itself. -->
-        <plugin>
-          <groupId>org.eclipse.m2e</groupId>
-          <artifactId>lifecycle-mapping</artifactId>
-          <version>1.0.0</version>
-          <configuration>
-            <lifecycleMappingMetadata>
-              <pluginExecutions>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-toolchains-plugin</artifactId>
-                    <versionRange>[3.0.0,)</versionRange>
-                    <goals>
-                      <goal>toolchain</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore></ignore>
-                  </action>
-                </pluginExecution>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-antrun-plugin</artifactId>
-                    <versionRange>[3.0.0,)</versionRange>
-                    <goals>
-                      <goal>run</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore></ignore>
-                  </action>
-                </pluginExecution>
-              </pluginExecutions>
-            </lifecycleMappingMetadata>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
   </build>
   <dependencies>
     <dependency>
@@ -126,22 +59,6 @@
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-swing</artifactId>
       <version>${javafx.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.controlsfx</groupId>
-      <artifactId>controlsfx</artifactId>
-      <version>${controlsfx.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.scenicview</groupId>
-      <artifactId>scenicview</artifactId>
-      <version>${scenicview.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

@@ -7,8 +7,6 @@ import static java.util.stream.Collectors.toList;
 
 import java.util.Collection;
 
-import org.scenicview.ScenicView;
-
 import javafx.application.Application;
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleObjectProperty;
@@ -30,8 +28,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Border;
@@ -83,13 +79,6 @@ public class Multiple_Borders_In_Jfx extends Application
     final var guiRoot = makeGui( state );
     final var mainScene = new Scene( guiRoot, 1200, 1000 );
     mainWindow.setScene( mainScene );
-    mainWindow.addEventHandler( KeyEvent.KEY_PRESSED, keyEvent ->
-    {
-      if ( keyEvent.getCode().equals( KeyCode.F12 ) )
-      {
-        ScenicView.show( mainScene );
-      }
-    } );
     mainWindow.getIcons().add( new Image( "https://www.iconfinder.com/icons/92498/download/png/32" ) );
     mainWindow.sizeToScene();
     mainWindow.centerOnScreen();
